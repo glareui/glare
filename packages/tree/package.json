@@ -1,0 +1,16 @@
+{
+  "name": "@glare/tree",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@types/react": "^16.13.1",
+    "react": "^16.13.1"
+  },
+  "dependencies": {
+    "immer": "^8.0.0",
+    "lodash": "^4.17.20",
+    "produce": "^0.4.1",
+    "react": "^16.13.1",
+    "zustand": "^3.2.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", "tree.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "es5",
+    "downlevelIteration": true,
+    "lib": ["dom", "es2017"],
+    "strict": false,
+    "paths": {
+      "@glare/theme": ["../theme/src"],
+      "@glare/theme/*": ["../theme/src/*"],
+      "@glare/tree": ["../tree/src"],
+      "@glare/tree/*": ["../tree/src/*"],
+      "@glare/render": ["../render/src"],
+      "@glare/render/*": ["../render/src/*"]
+    }
+  }
+}

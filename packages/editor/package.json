@@ -1,0 +1,15 @@
+{
+  "name": "@glare/theme",
+  "version": "0.0.0",
+  "main": "src/index.tsx",
+  "devDependencies": {
+    "@types/react": "^16.13.1",
+    "react": "^16.13.1"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dnd": "^11.1.3",
+    "@glare/tree": "^0.0.0",
+    "@glare/render": "^0.0.0"
+  }
+}
