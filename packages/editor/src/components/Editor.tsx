@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { Box, Text, Link } from "@chakra-ui/react";
 
 import SplitPane from "react-split-pane";
@@ -16,7 +16,7 @@ export const gridStyles = {
   p: 10,
 };
 
-const Editor: React.FC = () => {
+export const Editor: React.FC = React.memo(() => {
   const showCode = useApp((state) => state.showCode);
   const showLayout = useApp((state) => state.showLayout);
   const components = useTree((state) => state.components);
@@ -96,7 +96,4 @@ const Editor: React.FC = () => {
       {/* <CodePanel /> */}
     </SplitPane>
   );
-};
-
-export default memo(Editor);
-
+});

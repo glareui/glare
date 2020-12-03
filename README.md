@@ -5,7 +5,15 @@
 
 Visual Editor Framework
 
+### Development
+
+Clone this repo, run Yarn and start development app
+
+    yarn app:start
+
 ### Install
+
+    ** NOTE - PACKAGE NOT YET RELEASED **
 
     yarn add @glare/core
 

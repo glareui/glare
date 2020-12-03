@@ -4,8 +4,14 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ChakraProvider } from "@chakra-ui/react";
 
-import Editor from "@glare/editor";
+import { Editor } from "@glare/editor";
 
 export const App = () => {
-  return <Editor />;
+  return (
+    <ChakraProvider>
+      <DndProvider backend={HTML5Backend}>
+        <Editor />
+      </DndProvider>
+    </ChakraProvider>
+  );
 };
