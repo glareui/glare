@@ -1,5 +1,5 @@
-[!MIT](https://img.shields.io/github/license/glareui/glare)
-[!Commits](https://img.shields.io/github/commit-activity/m/glareui/glare)
+[![MIT](https://img.shields.io/github/license/glareui/glare)](https://github.com/glareui/glare)
+[![Commits](https://img.shields.io/github/commit-activity/m/glareui/glare)](https://github.com/glareui/glare)
 
 # Glare
 
