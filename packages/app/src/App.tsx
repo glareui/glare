@@ -1,16 +1,43 @@
 import React from "react";
+import { Flex, Box } from "@chakra-ui/react";
 
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ChakraProvider } from "@chakra-ui/react";
 
-import { Editor } from "@glare/editor";
+// import theme from "@glare/theme";
+const theme = {};
+
+import {
+  InspectorProvider,
+  Editor,
+  Header,
+  Sidebar,
+  Inspector,
+} from "@glare/editor";
 
 export const App = () => {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <DndProvider backend={HTML5Backend}>
-        <Editor />
+        <Header />
+        <Flex h="calc(100vh - 3rem)">
+          <Sidebar />
+          <Box bg="white" flex={1} position="relative">
+            <Editor />
+          </Box>
+          <Box
+            maxH="calc(100vh - 3rem)"
+            flex="0 0 15rem"
+            bg="#f7fafc"
+            overflowY="auto"
+            overflowX="visible"
+            borderLeft="1px solid #cad5de">
+            <InspectorProvider>
+              <Inspector />
+            </InspectorProvider>
+          </Box>
+        </Flex>
       </DndProvider>
     </ChakraProvider>
   );

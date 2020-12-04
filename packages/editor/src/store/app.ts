@@ -24,22 +24,22 @@ const INITIAL_APP_STATE = {
 export const useApp = create<AppState>((set) => ({
   ...INITIAL_APP_STATE,
   toggleBuilderMode: () =>
-    set((state: TreeState) => ({
+    set((state: AppState) => ({
       ...state,
       showLayout: !state.showLayout,
     })),
   toggleCodePanel: () =>
-    set((state: TreeState) => ({
+    set((state: AppState) => ({
       ...state,
       showCode: !state.showCode,
     })),
   toggleInputText: () =>
-    set((state: TreeState) => ({
+    set((state: AppState) => ({
       ...state,
       inputTextFocused: !state.inputTextFocused,
     })),
   setOverlay: (overlay: Overlay | undefined) =>
-    set((state: TreeState) => ({
+    set((state: AppState) => ({
       ...state,
       overlay,
     })),

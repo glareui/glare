@@ -4,8 +4,8 @@ import { Box, Text, Link } from "@chakra-ui/react";
 import SplitPane from "react-split-pane";
 // import CodePanel from "./components/CodePanel";
 import { ComponentPreview, useDropComponent } from "@glare/render";
-import { useTree } from "@glare/tree";
 
+import { useTree } from "@glare/tree";
 import { useApp } from "./../store/app"; // FIXME
 
 export const gridStyles = {
@@ -58,17 +58,7 @@ export const Editor: React.FC = React.memo(() => {
       onClick={onSelectBackground}>
       {isEmpty && (
         <Text maxWidth="md" color="gray.400" fontSize="xl" textAlign="center">
-          Drag some component to start coding without code! Or load{" "}
-          <Link
-            color="gray.500"
-            onClick={(e: React.MouseEvent) => {
-              e.stopPropagation();
-              // dispatch.components.loadDemo("onboarding");
-            }}
-            textDecoration="underline">
-            the onboarding components
-          </Link>
-          .
+          Drag some component to start.
         </Text>
       )}
 

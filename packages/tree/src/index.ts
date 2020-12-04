@@ -4,9 +4,15 @@ import create from "zustand";
 import shallow from "zustand/shallow";
 
 import produce from "immer";
+import omit from "lodash/omit";
 
 import { builders } from "./composer";
-import { generateId, duplicateComponent, deleteComponent } from "./utils";
+import {
+  generateId,
+  duplicateComponent,
+  deleteComponent,
+  getDefaultFormProps,
+} from "./utils"; // FIXME move into utils
 import { productHunt } from "./templates";
 
 const DEFAULT_ID = "root";
@@ -31,6 +37,9 @@ type TreeMovePayload = {
 };
 type TreeMoveSelectedChildrenPayload = { fromIndex: number; toIndex: number };
 
+type UpdatePropsPayload = { id: string; name: string; value: string };
+type DeletePropsPayload = { id: string; name: string };
+
 type TreeState = {
   // Tree
   components: IComponents;
@@ -44,6 +53,9 @@ type TreeState = {
   unhover: () => void;
   setComponentName: (payload: TreeComponentNamePayload) => void;
   duplicate: () => void;
+  resetProps: (componentId: IComponent["id"]) => void;
+  updateProps: (payload: UpdatePropsPayload) => void;
+  deleteProps: (payload: DeletePropsPayload) => void;
   addItem: (payload: TreeAddPayload) => void;
   addMetaItem: (payload: TreeAddMetaPayload) => void;
   moveItem: (payload: TreeMovePayload) => void;
@@ -62,7 +74,7 @@ export const INITIAL_COMPONENTS: IComponents = {
 };
 
 const useTree = create<TreeState>((set) => ({
-  components: productHunt,
+  components: INITIAL_COMPONENTS,
   selectedId: DEFAULT_ID,
   select: (selectedId) =>
     set((state: TreeState) => ({
@@ -119,6 +131,35 @@ const useTree = create<TreeState>((set) => ({
         }
       });
     }),
+  resetProps: (componentId) =>
+    set((state: TreeState) => {
+      return produce(state, (draftState: ComponentsState) => {
+        const component = draftState.components[componentId];
+        const { form, ...defaultProps } = DEFAULT_PROPS[component.type] || {};
+
+        draftState.components[componentId].props = defaultProps || {};
+      });
+    }),
+  updateProps: (payload) =>
+    set((state: TreeState) => {
+      return produce(state, (draftState: ComponentsState) => {
+        draftState.components[payload.id].props[payload.name] = payload.value;
+      });
+    }),
+  deleteProps: (payload) =>
+    set((state: TreeState) => {
+      return {
+        ...state,
+        components: {
+          ...state.components,
+          [payload.id]: {
+            ...state.components[payload.id],
+            props: omit(state.components[payload.id].props, payload.name),
+          },
+        },
+      };
+    }),
+
   addItem: (payload) =>
     set((state: TreeState) =>
       produce(state, (draftState: TreeState) => {
@@ -209,4 +250,4 @@ const useTree = create<TreeState>((set) => ({
     }),
 }));
 
-export { useTree, builders, shallow };
+export { useTree, builders, shallow, getDefaultFormProps };
