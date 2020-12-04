@@ -3,10 +3,9 @@ import { Flex, Box } from "@chakra-ui/react";
 
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, theme } from "@chakra-ui/react";
 
 // import theme from "@glare/theme";
-const theme = {};
 
 import {
   InspectorProvider,
