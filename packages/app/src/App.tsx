@@ -3,17 +3,20 @@ import { Flex, Box } from "@chakra-ui/react";
 
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { ChakraProvider, theme } from "@chakra-ui/react";
+import { ChakraProvider, theme as chakraTheme } from "@chakra-ui/react";
 
-// import theme from "@glare/theme";
+import theme from "@glare/theme";
 
 import {
   InspectorProvider,
   Editor,
   Header,
   Sidebar,
+  TreeView,
   Inspector,
 } from "@glare/editor";
+
+console.log("TreeView", TreeView, Sidebar);
 
 export const App = () => {
   return (
@@ -21,7 +24,7 @@ export const App = () => {
       <DndProvider backend={HTML5Backend}>
         <Header />
         <Flex h="calc(100vh - 3rem)">
-          <Sidebar />
+          <TreeView />
           <Box bg="white" flex={1} position="relative">
             <Editor />
           </Box>
