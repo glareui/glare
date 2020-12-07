@@ -13,9 +13,8 @@ import {
 import { EditIcon, SmallCloseIcon } from "@chakra-ui/icons";
 
 import { useInspectorState } from "../../../contexts/InspectorContext";
-import useDispatch from "./../../../hooks/useDispatch";
-import { useForm } from "./../../../hooks/useForm";
 
+import { useForm } from "./../../../hooks/useForm";
 import { useTree } from "@glare/tree";
 
 const SEPARATOR = "=";
