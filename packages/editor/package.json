@@ -7,6 +7,7 @@
     "react": "^16.13.1"
   },
   "dependencies": {
+    "@atlaskit/tree": "^8.2.0",
     "@chakra-ui/icons": "^1.0.1",
     "@geist-ui/react-icons": "^1.0.1",
     "@glare/render": "^0.0.0",
