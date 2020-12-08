@@ -5,6 +5,32 @@
 
 Visual Editor Framework
 
+### How to use?
+
+```
+import { Editor, InspectorProvider, Inspector, TreeView } from "@glare/editor";
+
+const BasicEditor = () => (
+  <Flex h="calc(100vh - 3rem)">
+    <TreeView />
+    <Box bg="white" flex={1} position="relative">
+      <Editor />
+    </Box>
+    <Box
+      maxH="calc(100vh - 3rem)"
+      flex="0 0 15rem"
+      bg="#f7fafc"
+      overflowY="auto"
+      overflowX="visible"
+      borderLeft="1px solid #cad5de">
+      <InspectorProvider>
+        <Inspector />
+      </InspectorProvider>
+    </Box>
+  </Flex>
+)
+```
+
 ### Development
 
 Clone this repo, run Yarn and start development app
