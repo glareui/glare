@@ -1,21 +1,28 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
-import Tree, {
-  mutateTree,
-  addItemToTree,
-  moveItemOnTree,
-  getItem,
-} from "@atlaskit/tree";
+import Tree from "@atlaskit/tree";
 
+import { EditorContext } from "@glare/theme";
 import { useTree, shallow } from "@glare/tree";
 
-const TreeNode = ({ draggingOver, children }) => {
+const TreeNodeTarget = ({ draggingOver, children, provided, ...rest }) => {
   return (
     <Flex
+      ref={provided.innerRef}
+      width="15rem"
       transition="background 0.25s ease-in-out"
       background={draggingOver ? "rgba(55, 53, 47, 0.1)" : null}
-      _hover={{ background: "rgba(55, 53, 47, 0.1)" }}>
+      _hover={{ background: "rgba(55, 53, 47, 0.1)" }}
+      {...rest}>
+      {children}
+    </Flex>
+  );
+};
+
+const TreeNode = ({ children }) => {
+  return (
+    <Flex p={2} fontSize="sm" width="100%" flexGrow={1}>
       {children}
     </Flex>
   );
@@ -23,8 +30,9 @@ const TreeNode = ({ draggingOver, children }) => {
 
 const renderItem = ({ item, onExpand, onCollapse, provided, snapshot }) => {
   return (
-    <div
-      ref={provided.innerRef}
+    <TreeNodeTarget
+      draggingOver={snapshot.draggingOver}
+      provided={provided}
       {...provided.dragHandleProps}
       {...provided.draggableProps}>
       <TreeNode
@@ -32,13 +40,13 @@ const renderItem = ({ item, onExpand, onCollapse, provided, snapshot }) => {
         dnd={{ dragHandleProps: provided.dragHandleProps }}>
         {item.type}
       </TreeNode>
-    </div>
+    </TreeNodeTarget>
   );
 };
 
 export const TreeView: React.FC = React.memo(() => {
   const components = useTree((state) => state.components);
-  const tree = { rootId: "comp-root", items: components };
+  const tree = { rootId: components.root.id, items: components };
 
   const [moveItem, moveItemChildren] = useTree(
     (state) => [state.moveItem, state.moveItemChildren],
@@ -61,25 +69,25 @@ export const TreeView: React.FC = React.memo(() => {
   };
 
   return (
-    <Flex
-      maxH="calc(100vh - 3rem)"
-      overflowY="auto"
-      overflowX="visible"
-      boxShadow="xl"
-      flex="0 0 14rem"
-      p={5}
-      m={0}
-      as="menu"
-      backgroundColor="gray.100"
-      width="15rem">
-      <Tree
-        tree={tree}
-        renderItem={(item) => renderItem(item)}
-        offsetPerLevel={4}
-        onDragEnd={onDragEnd}
-        isDragEnabled
-        isNestingEnabled
-      />
-    </Flex>
+    <EditorContext>
+      <Flex
+        maxH="calc(100vh - 3rem)"
+        overflowY="auto"
+        overflowX="visible"
+        boxShadow="xl"
+        m={0}
+        p={0}
+        backgroundColor="white"
+        width="15rem">
+        <Tree
+          tree={tree}
+          renderItem={(item) => renderItem(item)}
+          offsetPerLevel={4}
+          onDragEnd={onDragEnd}
+          isDragEnabled
+          isNestingEnabled
+        />
+      </Flex>
+    </EditorContext>
   );
 });

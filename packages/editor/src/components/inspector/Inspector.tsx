@@ -29,6 +29,7 @@ import { useInspectorUpdate } from "./../../contexts/InspectorContext";
 import { componentsList } from "./../../components/componentsList";
 
 import { useTree } from "@glare/tree";
+import { EditorContext } from "@glare/theme";
 
 const Inspector = () => {
   const selectedId = useTree((state) => state.selectedId);
@@ -54,16 +55,17 @@ const Inspector = () => {
   }, [clearActiveProps]);
 
   return (
-    <>
+    <EditorContext>
+    <Box>
       <Box bg="white">
         <Box
           fontWeight="semibold"
           fontSize="md"
-          color="blue.700"
+          color="black.700"
           py={2}
           px={2}
           boxShadow="sm"
-          bg="blue.50"
+          bg="white"
           display="flex"
           justifyContent="space-between"
           flexDir="column">
@@ -130,7 +132,8 @@ const Inspector = () => {
         showChildren={componentHasChildren}
         parentIsRoot={parentIsRoot}
       />
-    </>
+    </Box>
+    </EditorContext>
   );
 };
 
