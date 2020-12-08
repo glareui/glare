@@ -8,7 +8,7 @@ import Tree, {
   getItem,
 } from "@atlaskit/tree";
 
-import { useTree } from "@glare/tree";
+import { useTree, shallow } from "@glare/tree";
 
 const TreeNode = ({ draggingOver, children }) => {
   return (
@@ -38,12 +38,27 @@ const renderItem = ({ item, onExpand, onCollapse, provided, snapshot }) => {
 
 export const TreeView: React.FC = React.memo(() => {
   const components = useTree((state) => state.components);
-
-  console.log(components);
-
   const tree = { rootId: "comp-root", items: components };
 
-  console.log(tree);
+  const [moveItem, moveItemChildren] = useTree(
+    (state) => [state.moveItem, state.moveItemChildren],
+    shallow
+  );
+
+  const onDragEnd = (source, destination) => {
+    if (!destination) return;
+    if ("index" in source && "index" in destination) {
+      moveItemChildren({
+        componentId: destination.parentId,
+        fromIndex: source.index,
+        toIndex: destination.index,
+      });
+    } else {
+      const sourceItemId = components[source.parentId].children[source.index];
+      const sourceItem = components[sourceItemId];
+      moveItem({ parentId: destination.parentId, componentId: sourceItem.id });
+    }
+  };
 
   return (
     <Flex
@@ -61,6 +76,7 @@ export const TreeView: React.FC = React.memo(() => {
         tree={tree}
         renderItem={(item) => renderItem(item)}
         offsetPerLevel={4}
+        onDragEnd={onDragEnd}
         isDragEnabled
         isNestingEnabled
       />

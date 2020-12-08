@@ -16,8 +16,6 @@ import {
   Inspector,
 } from "@glare/editor";
 
-console.log("TreeView", TreeView, Sidebar);
-
 export const App = () => {
   return (
     <ChakraProvider theme={theme}>
