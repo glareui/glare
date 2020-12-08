@@ -13,7 +13,8 @@ import {
   deleteComponent,
   getDefaultFormProps,
 } from "./utils"; // FIXME move into utils
-import { productHunt } from "./templates";
+
+import { secretchakra } from "./templates";
 
 const DEFAULT_ID = "root";
 
@@ -36,6 +37,11 @@ type TreeMovePayload = {
   componentId: IComponent["id"];
 };
 type TreeMoveSelectedChildrenPayload = { fromIndex: number; toIndex: number };
+type TreeMoveChildrenPayload = {
+  componentId: IComponent["id"];
+  fromIndex: number;
+  toIndex: number;
+};
 
 type UpdatePropsPayload = { id: string; name: string; value: string };
 type DeletePropsPayload = { id: string; name: string };
@@ -60,6 +66,7 @@ type TreeState = {
   addMetaItem: (payload: TreeAddMetaPayload) => void;
   moveItem: (payload: TreeMovePayload) => void;
   moveSelectedItemChildren: (payload: TreeMoveSelectedChildrenPayload) => void;
+  moveItemChildren: (payload: TreeMoveChildrenPayload) => void;
   deleteItem: (componentId: string) => void;
 };
 
@@ -213,8 +220,20 @@ const useTree = create<TreeState>((set) => ({
     }),
   moveSelectedItemChildren: (payload) =>
     set((state: TreeState) => {
-      return produce(state, (draftState: ComponentsState) => {
+      return produce(state, (draftState: TreeState) => {
         const selectedComponent = draftState.components[draftState.selectedId];
+
+        selectedComponent.children.splice(
+          payload.toIndex,
+          0,
+          selectedComponent.children.splice(payload.fromIndex, 1)[0]
+        );
+      });
+    }),
+  moveItemChildren: (payload) =>
+    set((state: TreeState) => {
+      return produce(state, (draftState: TreeState) => {
+        const selectedComponent = draftState.components[payload.componentId];
 
         selectedComponent.children.splice(
           payload.toIndex,
