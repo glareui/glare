@@ -98,11 +98,12 @@ export const Header = React.memo(() => {
                 zIndex={100}
                 hasArrow
                 bg="yellow.100"
+                color="black"
                 aria-label="Builder mode help"
                 label="Builder mode adds extra padding/borders">
                 <FormLabel
                   cursor="help"
-                  color="gray.200"
+                  color="black"
                   fontSize="xs"
                   htmlFor="preview"
                   pb={0}
@@ -115,7 +116,7 @@ export const Header = React.memo(() => {
               <LightMode>
                 <Switch
                   isChecked={showLayout}
-                  colorScheme="blue"
+                  colorScheme="gray"
                   size="sm"
                   onChange={() => toggleBuilderMode()}
                   id="preview"
@@ -125,7 +126,7 @@ export const Header = React.memo(() => {
 
             <FormControl display="flex" flexDirection="row" alignItems="center">
               <FormLabel
-                color="gray.200"
+                color="black"
                 fontSize="xs"
                 mr={2}
                 mb={0}
@@ -138,7 +139,7 @@ export const Header = React.memo(() => {
                 <Switch
                   isChecked={showCode}
                   id="code"
-                  colorScheme="blue"
+                  colorScheme="gray"
                   onChange={() => toggleCodePanel()}
                   size="sm"
                 />
