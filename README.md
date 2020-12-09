@@ -5,6 +5,8 @@
 
 Visual Editor Framework
 
+![Preview](docs/images/screen.png)
+
 ### How to use?
 
 ```
