@@ -23,14 +23,14 @@ const DragItem: React.FC<ComponentItemProps> = ({
   if (!soon) {
     boxProps = {
       ref: drag,
-      color: "blackAlpha.600",
+      color: "blackAlpha.800",
       cursor: "move",
       _hover: {
         ml: -1,
         mr: 1,
-        bg: "blue.50",
+        bg: "gray.50",
         boxShadow: "sm",
-        color: "blue.700",
+        color: "black",
       },
     };
   }
@@ -57,8 +57,8 @@ const DragItem: React.FC<ComponentItemProps> = ({
         <Box
           ml={2}
           borderWidth="1px"
-          color="blue.600"
-          borderColor="blue.300"
+          color="pink.600"
+          borderColor="pink.300"
           fontSize="xs"
           borderRadius={4}
           px={1}>

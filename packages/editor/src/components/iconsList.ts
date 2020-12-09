@@ -1,5 +1,5 @@
-import * as Icons from '@chakra-ui/icons'
+import * as Icons from "@chakra-ui/icons";
 
-const { createIcon, ...iconsList } = Icons
+const { createIcon, ...iconsList } = Icons;
 
-export default iconsList
+export default iconsList;

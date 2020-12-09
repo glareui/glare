@@ -1,7 +1,9 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
-
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Tree from "@atlaskit/tree";
+
+import { ChevronRight, ChevronDown } from '@geist-ui/react-icons'
+
 
 import { EditorContext } from "@glare/theme";
 import { useTree, shallow } from "@glare/tree";
@@ -11,18 +13,11 @@ const TreeNodeTarget = ({ draggingOver, children, provided, ...rest }) => {
     <Flex
       ref={provided.innerRef}
       width="15rem"
+      color="black",
       transition="background 0.25s ease-in-out"
-      background={draggingOver ? "rgba(55, 53, 47, 0.1)" : null}
-      _hover={{ background: "rgba(55, 53, 47, 0.1)" }}
+      backgound={draggingOver ? "blackAlpha.100" : null}
+      _hover={{ background: "#F8F9FA" }}
       {...rest}>
-      {children}
-    </Flex>
-  );
-};
-
-const TreeNode = ({ children }) => {
-  return (
-    <Flex p={2} fontSize="sm" width="100%" flexGrow={1}>
       {children}
     </Flex>
   );
@@ -35,11 +30,18 @@ const renderItem = ({ item, onExpand, onCollapse, provided, snapshot }) => {
       provided={provided}
       {...provided.dragHandleProps}
       {...provided.draggableProps}>
-      <TreeNode
+      <Flex p={2} 
+        fontSize="sm" 
+        width="100%" 
+        flexGrow={1} 
+        alignItems="center" 
         isDragging={snapshot.isDragging}
         dnd={{ dragHandleProps: provided.dragHandleProps }}>
-        {item.type}
-      </TreeNode>
+        {item.children.length && item.isExpanded ? <ChevronDown size={16} onClick={() => onCollapse(item.id)} /> : <ChevronRight size={16} onClick={() => onExpand(item.id)} />}
+        <Text letterSpacing="wide" fontSize="sm" textTransform="capitalize">
+          {item.type}
+        </Text>
+      </Flex>     
     </TreeNodeTarget>
   );
 };
