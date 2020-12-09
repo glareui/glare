@@ -74,7 +74,8 @@ export const Header = React.memo(() => {
         bg="white"
         as="header"
         height="3rem"
-        px="1rem">
+        px="1rem"
+        color="black">
         <Flex
           width="14rem"
           height="100%"
@@ -83,7 +84,7 @@ export const Header = React.memo(() => {
           flexDirection="row"
           alignItems="center"
           aria-label="Chakra UI, Back to homepage">
-          <Box fontSize="2xl" as={Layers} size={20} mr={1} color="white" />{" "}
+          <Box fontSize="2xl" as={Layers} size={20} mr={2} color="black" />{" "}
           <Box fontWeight="bold">glare</Box>
         </Flex>
 
@@ -155,7 +156,7 @@ export const Header = React.memo(() => {
                       rightIcon={<SmallCloseIcon path="" />}
                       size="xs"
                       variant="ghost"
-                      color="whiteAlpha.800">
+                      color="black">
                       Clear
                     </Button>
                   </PopoverTrigger>
@@ -198,11 +199,11 @@ export const Header = React.memo(() => {
           direction="row"
           spacing="2">
           <Link isExternal href="https://github.com/glareui/glare">
-            <Box as={Hexagon} size={16} color="white" />
+            <Box as={Hexagon} size={16} color="black" />
           </Link>
-          <Box lineHeight="shorter" color="white" fontSize="xs">
+          <Box lineHeight="shorter" color="black" fontSize="xs">
             by{" "}
-            <Link isExternal href="https://terminalkitten.com" color="white">
+            <Link isExternal href="https://terminalkitten.com" color="black">
               tk
             </Link>
           </Box>
