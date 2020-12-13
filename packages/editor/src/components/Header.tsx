@@ -7,7 +7,6 @@ import {
   Link,
   Stack,
   FormLabel,
-  DarkMode,
   FormControl,
   Popover,
   PopoverTrigger,
@@ -157,36 +156,33 @@ export const Header = React.memo(() => {
                       rightIcon={<SmallCloseIcon path="" />}
                       size="xs"
                       variant="ghost"
-                      color="black">
+                      colorScheme="gray">
                       Clear
                     </Button>
                   </PopoverTrigger>
-                  <LightMode>
-                    <PopoverContent zIndex={100} bg="white">
-                      <PopoverArrow />
-                      <PopoverCloseButton />
-                      <PopoverHeader>Are you sure?</PopoverHeader>
-                      <PopoverBody fontSize="sm">
-                        Do you really want to remove all components on the
-                        editor?
-                      </PopoverBody>
-                      <PopoverFooter display="flex" justifyContent="flex-end">
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          colorScheme="red"
-                          rightIcon={<CheckIcon path="" />}
-                          onClick={() => {
-                            // FIXME - dispatch.components.reset();
-                            if (onClose) {
-                              onClose();
-                            }
-                          }}>
-                          Yes, clear
-                        </Button>
-                      </PopoverFooter>
-                    </PopoverContent>
-                  </LightMode>
+                  <PopoverContent zIndex={100} bg="white">
+                    <PopoverArrow />
+                    <PopoverCloseButton />
+                    <PopoverHeader>Are you sure?</PopoverHeader>
+                    <PopoverBody fontSize="sm">
+                      Do you really want to remove all components on the editor?
+                    </PopoverBody>
+                    <PopoverFooter display="flex" justifyContent="flex-end">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        colorScheme="red"
+                        rightIcon={<CheckIcon path="" />}
+                        onClick={() => {
+                          // FIXME - dispatch.components.reset();
+                          if (onClose) {
+                            onClose();
+                          }
+                        }}>
+                        Yes, clear
+                      </Button>
+                    </PopoverFooter>
+                  </PopoverContent>
                 </>
               )}
             </Popover>

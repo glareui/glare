@@ -50,25 +50,21 @@ export const HeaderMenu = React.memo(() => {
         Editor
       </CustomMenuButton>
       <Portal>
-        <LightMode>
-          <MenuList bg="white" zIndex={999}>
-            <ExportMenuItem />
-            <ImportMenuItem />
+        <MenuList bg="white" zIndex={999}>
+          <ExportMenuItem />
+          <ImportMenuItem />
 
-            <MenuDivider />
+          <MenuDivider />
 
-            <MenuItemLink
-              isExternal
-              href="https://chakra-ui.com/getting-started">
-              <Box mr={2} as={CheckIcon} />
-              Chakra UI Docs
-            </MenuItemLink>
-            <MenuItemLink href="https://github.com/premieroctet/openchakra/issues">
-              <Box mr={2} as={CheckIcon} />
-              Report issue
-            </MenuItemLink>
-          </MenuList>
-        </LightMode>
+          <MenuItemLink isExternal href="https://chakra-ui.com/getting-started">
+            <Box mr={2} as={CheckIcon} />
+            Chakra UI Docs
+          </MenuItemLink>
+          <MenuItemLink href="https://github.com/premieroctet/openchakra/issues">
+            <Box mr={2} as={CheckIcon} />
+            Report issue
+          </MenuItemLink>
+        </MenuList>
       </Portal>
     </Menu>
   );
