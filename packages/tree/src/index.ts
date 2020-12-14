@@ -43,6 +43,7 @@ type TreeMoveChildrenPayload = {
   toIndex: number;
 };
 
+type UpdateMetaPropsPayload = { id: string; name: string; value: string };
 type UpdatePropsPayload = { id: string; name: string; value: string };
 type DeletePropsPayload = { id: string; name: string };
 
@@ -59,6 +60,7 @@ type TreeState = {
   unhover: () => void;
   setComponentName: (payload: TreeComponentNamePayload) => void;
   duplicate: () => void;
+  updateMetaProps: (payload: UpdateMetaPropsPayload) => void;
   resetProps: (componentId: IComponent["id"]) => void;
   updateProps: (payload: UpdatePropsPayload) => void;
   deleteProps: (payload: DeletePropsPayload) => void;
@@ -136,6 +138,12 @@ const useTree = create<TreeState>((set) => ({
           };
           draftState.components[parentElement.id].children.push(newId);
         }
+      });
+    }),
+  updateMetaProps: (payload) =>
+    set((state: TreeState) => {
+      return produce(state, (draftState: ComponentsState) => {
+        draftState.components[payload.id][payload.name] = payload.value;
       });
     }),
   resetProps: (componentId) =>

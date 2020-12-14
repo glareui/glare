@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import Tree from "@atlaskit/tree";
+import Tree, {mutateTree} from "@atlaskit/tree";
 
 import { ChevronRight, ChevronDown } from '@geist-ui/react-icons'
 
@@ -47,13 +47,27 @@ const renderItem = ({ item, onExpand, onCollapse, provided, snapshot }) => {
 };
 
 export const TreeView: React.FC = React.memo(() => {
-  const components = useTree((state) => state.components);
-  const tree = { rootId: components.root.id, items: components };
 
-  const [moveItem, moveItemChildren] = useTree(
-    (state) => [state.moveItem, state.moveItemChildren],
+  // define state
+  const components = useTree((state) => state.components);
+  const tree = { rootId: components.root.id, items: components }
+  
+  const [moveItem, moveItemChildren, updateMetaProps] = useTree(
+    (state) => [state.moveItem, state.moveItemChildren, state.updateMetaProps],
     shallow
   );
+
+  const onExpand = (itemId) => {
+    if (itemId) {
+      updateMetaProps({id:itemId, name: "isExpanded", value: true})
+    }
+  }
+
+  const onCollapse = itemId => {
+    if (itemId) {
+      updateMetaProps({id:itemId, name: "isExpanded", value: false})
+    }
+  }
 
   const onDragEnd = (source, destination) => {
     if (!destination) return;
@@ -86,6 +100,8 @@ export const TreeView: React.FC = React.memo(() => {
           renderItem={(item) => renderItem(item)}
           offsetPerLevel={4}
           onDragEnd={onDragEnd}
+          onCollapse={onCollapse}
+          onExpand={onExpand}
           isDragEnabled
           isNestingEnabled
         />
