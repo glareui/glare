@@ -11,7 +11,7 @@
     "app:build": "lerna run --scope={@glare/theme,@glare/app} build",
     "app:start": "lerna run --stream --scope @glare/app start",
     "prettify": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern webpack.config.js"
+    "lint": "eslint . --ext .ts,.tsx --ignore-pattern webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",

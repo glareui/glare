@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Link } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 import SplitPane from "react-split-pane";
 // import CodePanel from "./components/CodePanel";

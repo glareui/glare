@@ -8,11 +8,10 @@ import FormControl from "./FormControl";
 import { useApp } from "./../../../store/app"; // FIXME
 
 const ChildrenControl: React.FC = () => {
-
   const textInput = useRef<HTMLInputElement>(null);
 
-  const focusInput = useApp((state) => state.inputTextFocused)
-  const [toggleInputText] = useApp((state) => [state.toggleInputText])
+  const focusInput = useApp((state) => state.inputTextFocused);
+  const [toggleInputText] = useApp((state) => [state.toggleInputText]);
 
   const { setValueFromEvent } = useForm();
   const children = usePropsSelector("children");
@@ -41,7 +40,7 @@ const ChildrenControl: React.FC = () => {
         ref={textInput}
         onKeyUp={onKeyUp}
         onBlur={() => {
-          dispatch.app.toggleInputText(false);
+          toggleInputText(false);
         }}
       />
     </FormControl>

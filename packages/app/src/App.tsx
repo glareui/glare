@@ -5,7 +5,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ChakraProvider, theme as chakraTheme } from "@chakra-ui/react";
 
-import { theme, editorTheme } from "@glare/theme";
+import { editorTheme } from "@glare/theme";
 
 import {
   InspectorProvider,
@@ -25,7 +25,7 @@ export const App = () => {
           <Sidebar />
           <TreeView />
           <Box bg="white" flex={1} position="relative">
-            <ChakraProvider theme={theme}>
+            <ChakraProvider theme={chakraTheme}>
               <Editor />
             </ChakraProvider>
           </Box>

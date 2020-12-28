@@ -1,9 +1,8 @@
-import React, { memo } from "react";
+import React from "react";
 
 import {
   Box,
   Button,
-  LightMode,
   Menu,
   MenuButton,
   MenuList,
@@ -23,20 +22,16 @@ import ImportMenuItem from "./ImportMenuItem";
 type MenuItemLinkProps = MenuItemProps | LinkProps;
 
 // Ignore because of AS typing issues
-// @ts-ignore
 const MenuItemLink: React.FC<MenuItemLinkProps> = React.forwardRef(
   (props, ref: React.Ref<HTMLLinkElement>) => {
-    // @ts-ignore
     return <MenuItem ref={ref} as="a" {...props} />;
   }
 );
 
-// @ts-ignore
 const CustomMenuButton: React.FC<
   MenuButtonProps | ButtonProps
 > = React.forwardRef((props, ref: React.Ref<HTMLLinkElement>) => {
-  // @ts-ignore
-  return <MenuButton as={Button} {...props} />;
+  return <MenuButton as={Button} ref={ref} {...props} />;
 });
 
 export const HeaderMenu = React.memo(() => {

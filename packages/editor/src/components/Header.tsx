@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Switch,
@@ -23,39 +23,13 @@ import {
 
 import { Hexagon, Layers } from "@geist-ui/react-icons";
 
-import { ExternalLinkIcon, SmallCloseIcon, CheckIcon } from "@chakra-ui/icons";
+import { SmallCloseIcon, CheckIcon } from "@chakra-ui/icons";
 
 import { HeaderMenu } from "./headerMenu/HeaderMenu";
 
-import { useTree } from "@glare/tree";
 import { useApp } from "./../store/app"; // FIXME
 
 import { EditorContext } from "@glare/theme";
-
-const CodeSandboxButton = () => {
-  const components = useTree((state) => state.components);
-  const [isLoading, setIsLoading] = useState(false);
-
-  return (
-    <Tooltip
-      zIndex={100}
-      hasArrow
-      bg="yellow.100"
-      aria-label="Builder mode help"
-      label="Export in CodeSandbox">
-      <Button
-        onClick={async () => {
-          setIsLoading(true);
-        }}
-        isLoading={isLoading}
-        rightIcon={<ExternalLinkIcon path="" />}
-        variant="ghost"
-        size="xs">
-        Export code
-      </Button>
-    </Tooltip>
-  );
-};
 
 export const Header = React.memo(() => {
   const showCode = useApp((state) => state.showCode);

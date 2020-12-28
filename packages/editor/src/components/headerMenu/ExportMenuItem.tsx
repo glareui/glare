@@ -10,9 +10,9 @@ const ExportMenuItem = () => {
   return (
     <MenuItem onClick={() => null}>
       <Box mr={2} as={CheckIcon} />
-      Save components // =>
+      Save components
     </MenuItem>
   );
 };
 
-export default ExportMenuItem
+export default ExportMenuItem;
