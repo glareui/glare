@@ -21,7 +21,7 @@ const AvatarPreview: React.FC<
   const { drop, isOver } = useDropComponent(component.id, ["AvatarBadge"]);
   const { props, ref } = useInteractive(component);
 
-  let boxProps: any = {
+  const boxProps: any = {
     display: "inline-block",
     zIndex: index ? 20 - index : null,
   };
@@ -47,7 +47,7 @@ export const AvatarGroupPreview = ({ component }: IPreviewProps) => {
   const { props, ref } = useInteractive(component, true);
   const { drop, isOver } = useDropComponent(component.id, ["Avatar"]);
   const components = useTree((state) => state.components);
-  let boxProps: any = { display: "inline" };
+  const boxProps: any = { display: "inline" };
 
   if (isOver) {
     props.bg = "teal.50";
@@ -71,7 +71,7 @@ export const AvatarGroupPreview = ({ component }: IPreviewProps) => {
 
 export const AvatarBadgePreview = ({ component }: IPreviewProps) => {
   const { props, ref } = useInteractive(component);
-  let boxProps: any = {};
+  const boxProps: any = {};
 
   return (
     <Box {...boxProps} ref={ref}>

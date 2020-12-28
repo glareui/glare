@@ -23,7 +23,7 @@ const PreviewContainer: React.FC<{
   });
 
   if (isBoxWrapped) {
-    let boxProps: any = {};
+    const boxProps: any = {};
 
     return (
       <Box {...boxProps} ref={ref}>

@@ -257,7 +257,7 @@ const useTree = create<TreeState>((set) => ({
       }
 
       return produce(state, (draftState: TreeState) => {
-        let component = draftState.components[componentId];
+        const component = draftState.components[componentId];
 
         // Remove self
         if (component && component.parent) {

@@ -6,7 +6,7 @@ import { useTree, builders, shallow } from "@glare/tree";
 export const useDropComponent = (
   componentId: string,
   accept: (ComponentType | MetaComponentType)[] = rootComponents,
-  canDrop: boolean = true
+  canDrop = true
 ) => {
   const [moveItem, addMetaItem, addItem] = useTree(
     (state) => [state.moveItem, state.addMetaItem, state.addItem],

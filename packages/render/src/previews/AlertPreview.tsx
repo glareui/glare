@@ -14,7 +14,7 @@ const AlertPreview: React.FC<IPreviewProps> = ({ component }) => {
   const { props, ref } = useInteractive(component, false);
   const { drop, isOver } = useDropComponent(component.id, acceptedTypes);
 
-  let boxProps: any = {};
+  const boxProps: any = {};
 
   if (isOver) {
     props.bg = "teal.50";

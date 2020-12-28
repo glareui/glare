@@ -18,7 +18,7 @@ const AccordionPreview: React.FC<IPreviewProps> = ({ component }) => {
   const { props, ref } = useInteractive(component, true);
   const { drop, isOver } = useDropComponent(component.id, acceptedTypes);
 
-  let boxProps: any = {};
+  const boxProps: any = {};
 
   if (isOver) {
     props.bg = "teal.50";
@@ -56,7 +56,7 @@ export const AccordionItemPreview = ({ component }: IPreviewProps) => {
   const { props, ref } = useInteractive(component, true);
   const { drop, isOver } = useDropComponent(component.id, AccordionWhitelist);
 
-  let boxProps: any = {};
+  const boxProps: any = {};
 
   if (isOver) {
     props.bg = "teal.50";
@@ -77,7 +77,7 @@ export const AccordionPanelPreview = ({ component }: IPreviewProps) => {
   const { props, ref } = useInteractive(component, true);
   const { drop, isOver } = useDropComponent(component.id, AccordionWhitelist);
 
-  let boxProps: any = {};
+  const boxProps: any = {};
 
   if (isOver) {
     props.bg = "teal.50";

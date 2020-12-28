@@ -7,7 +7,7 @@ import { useTree, shallow } from "@glare/tree";
 
 export const useInteractive = (
   component: IComponent,
-  enableVisualHelper: boolean = false
+  enableVisualHelper = false
 ) => {
   const [select] = useTree((state) => [state.select], shallow);
   const [hover, unhover] = useTree(

@@ -8,7 +8,7 @@ const StackPreview: React.FC<{ component: IComponent }> = ({ component }) => {
   const { drop, isOver } = useDropComponent(component.id);
   const { props, ref } = useInteractive(component, true);
 
-  let boxProps: any = {};
+  const boxProps: any = {};
 
   if (isOver) {
     props.bg = "teal.50";

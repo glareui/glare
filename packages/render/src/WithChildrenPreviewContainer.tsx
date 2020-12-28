@@ -37,7 +37,7 @@ const WithChildrenPreviewContainer: React.FC<{
   );
 
   if (isBoxWrapped) {
-    let boxProps: any = {
+    const boxProps: any = {
       display: "inline",
     };
 
