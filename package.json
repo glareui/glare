@@ -10,12 +10,16 @@
     "build": "lerna run --parallel build",
     "app:build": "lerna run --scope={@glare/theme,@glare/app} build",
     "app:start": "lerna run --stream --scope @glare/app start",
-    "pretify": "prettier --write ."
+    "prettify": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
     "babel-plugin-module-resolver": "4.0.0",
-    "eslint": "^7.14.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
     "jest": "^26.1.0",
     "lerna": "3.22.1",
     "prettier": "^2.0.5",
@@ -26,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@farpoint.get-ag.com:7999/pl/pvg-react.git"
+    "url": "https://github.com/glareui/glare"
   },
   "license": "MIT"
 }
