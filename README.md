@@ -23,8 +23,7 @@ const BasicEditor = () => (
       flex="0 0 15rem"
       bg="#f7fafc"
       overflowY="auto"
-      overflowX="visible"
-      borderLeft="1px solid #cad5de">
+      overflowX="visible">
       <InspectorProvider>
         <Inspector />
       </InspectorProvider>
