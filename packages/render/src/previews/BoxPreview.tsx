@@ -9,7 +9,7 @@ const BoxPreview: React.FC<{ component: IComponent }> = ({ component }) => {
   const { props, ref } = useInteractive(component, true);
 
   if (isOver) {
-    props.bg = "teal.50";
+    props.bg = "blue.50";
   }
 
   return (

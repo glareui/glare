@@ -40,7 +40,7 @@ export const AccordionHeaderPreview = ({ component }: IPreviewProps) => {
   const { drop, isOver } = useDropComponent(component.id, AccordionWhitelist);
 
   if (isOver) {
-    props.bg = "teal.50";
+    props.bg = "blue.50";
   }
 
   return (

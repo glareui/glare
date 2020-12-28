@@ -25,7 +25,7 @@ const WithChildrenPreviewContainer: React.FC<{
   }
 
   if (isOver) {
-    propsElement.bg = "teal.50";
+    propsElement.bg = "blue.50";
   }
 
   const children = React.createElement(
