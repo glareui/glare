@@ -4,7 +4,7 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "no-unused-declaration": true,
+    "no-unused-vars": 2,
   },
   extends: [
     "eslint:recommended",
