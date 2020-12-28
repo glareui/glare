@@ -32,9 +32,9 @@ export const secretchakra: IComponents = {
       "comp-K74LBAD12N7N8",
       "comp-K74LCUBUZD53Y",
     ],
-    type: "Flex",
+    type: "Page",
     parent: "comp-root",
-    rootParentType: "Flex",
+    rootParentType: "Page",
   },
   "comp-K74L811LSF53G": {
     id: "comp-K74L811LSF53G",
