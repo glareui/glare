@@ -7,14 +7,7 @@ import produce from "immer";
 import omit from "lodash/omit";
 
 import { builders } from "./composer";
-import {
-  generateId,
-  duplicateComponent,
-  deleteComponent,
-  getDefaultFormProps,
-} from "./utils"; // FIXME move into utils
-
-import { secretchakra } from "./templates";
+import { generateId, duplicateComponent, deleteComponent } from "./utils";
 
 const DEFAULT_ID = "root";
 
@@ -277,4 +270,4 @@ const useTree = create<TreeState>((set) => ({
     }),
 }));
 
-export { useTree, builders, shallow, getDefaultFormProps };
+export { useTree, builders, shallow };
