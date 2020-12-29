@@ -8,11 +8,10 @@ import {
 } from "@chakra-ui/react";
 import { CloseIcon, SearchIcon } from "@chakra-ui/icons";
 import DragItem from "./DragItem";
-import { menuItems, MenuItem } from "./../componentsList";
 
 import { EditorContext } from "@glare/theme";
 
-export const Sidebar = memo(() => {
+export const Sidebar = memo(({ items }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -59,10 +58,10 @@ export const Sidebar = memo(() => {
           </InputRightElement>
         </InputGroup>
 
-        {(Object.keys(menuItems) as ComponentType[])
+        {(Object.keys(items) as ComponentType[])
           .filter((c) => c.toLowerCase().includes(searchTerm.toLowerCase()))
           .map((name) => {
-            const { children, soon } = menuItems[name] as MenuItem;
+            const { children, soon } = items[name] as MenuItem;
 
             if (children) {
               const elements = Object.keys(children).map((childName) => (
@@ -72,7 +71,7 @@ export const Sidebar = memo(() => {
                   label={childName}
                   type={childName as any}
                   id={childName as any}
-                  rootParentType={menuItems[name]?.rootParentType || name}>
+                  rootParentType={items[name]?.rootParentType || name}>
                   {childName}
                 </DragItem>
               ));
@@ -85,7 +84,7 @@ export const Sidebar = memo(() => {
                   label={name}
                   type={`${name}Meta` as any}
                   id={`${name}Meta` as any}
-                  rootParentType={menuItems[name]?.rootParentType || name}>
+                  rootParentType={items[name]?.rootParentType || name}>
                   {name}
                 </DragItem>,
                 ...elements,
@@ -99,7 +98,7 @@ export const Sidebar = memo(() => {
                 label={name}
                 type={name as any}
                 id={name as any}
-                rootParentType={menuItems[name]?.rootParentType || name}>
+                rootParentType={items[name]?.rootParentType || name}>
                 {name}
               </DragItem>
             );

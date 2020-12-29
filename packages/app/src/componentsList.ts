@@ -10,6 +10,10 @@ type MenuItems = Partial<
   }
 >;
 
+export const customItems: MenuItems = {
+  Page: {},
+};
+
 export const menuItems: MenuItems = {
   Accordion: {
     children: {

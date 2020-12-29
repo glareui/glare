@@ -1,5 +1,4 @@
 import create from "zustand";
-import shallow from "zustand/shallow";
 
 type Overlay = undefined | { rect: DOMRect; id: string; type: ComponentType };
 

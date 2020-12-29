@@ -13,6 +13,7 @@
     "@glare/render": "^0.0.0",
     "@glare/theme": "^0.0.0",
     "@glare/tree": "^0.0.0",
+    "@glare/utils": "^0.0.0",
     "@reach/combobox": "^0.12.1",
     "coloreact": "^0.3.1",
     "react": "17.0.0",

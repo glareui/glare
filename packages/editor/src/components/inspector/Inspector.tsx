@@ -1,32 +1,12 @@
 import React, { useState, memo, useEffect, useMemo } from "react";
-import {
-  Link,
-  Box,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
-  FormHelperText,
-  ModalFooter,
-  Button,
-  useDisclosure,
-  Text,
-} from "@chakra-ui/react";
+import { Link, Box, Stack, useDisclosure, Text } from "@chakra-ui/react";
 
-import { Copy, Delete. Edit2, RefreshCcw } from "@geist-ui/react-icons";
+import { Copy, Delete, Edit2, RefreshCcw } from "@geist-ui/react-icons";
 
 import Panels from "./panels/Panels";
 import StylesPanel from "./panels/StylesPanel";
 import ActionButton from "./ActionButton";
 import { useInspectorUpdate } from "./../../contexts/InspectorContext";
-import { componentsList } from "./../../components/componentsList";
 
 import { useTree } from "@glare/tree";
 import { EditorContext } from "@glare/theme";
@@ -56,83 +36,83 @@ const Inspector = () => {
 
   return (
     <EditorContext>
-    <Box>
-      <Box bg="white">
-        <Box
-          fontWeight="semibold"
-          fontSize="md"
-          color="black.700"
-          py={2}
-          px={2}
-          boxShadow="sm"
-          bg="white"
-          display="flex"
-          justifyContent="space-between"
-          flexDir="column">
-          {isRoot ? "Document" : type}
-          {!!component.componentName && (
-            <Text fontSize="xs" fontWeight="light">
-              {component.componentName}
-            </Text>
-          )}
-        </Box>
-        {!isRoot && (
-          <Stack
-            direction="row"
+      <Box>
+        <Box bg="white">
+          <Box
+            fontWeight="semibold"
+            fontSize="md"
+            color="black.700"
             py={2}
-            spacing={2}
-            align="center"
-            zIndex={99}
             px={2}
-            flexWrap="wrap"
-            justify="flex-end">
-            {!component.componentName && (
+            boxShadow="sm"
+            bg="white"
+            display="flex"
+            justifyContent="space-between"
+            flexDir="column">
+            {isRoot ? "Document" : type}
+            {!!component.componentName && (
+              <Text fontSize="xs" fontWeight="light">
+                {component.componentName}
+              </Text>
+            )}
+          </Box>
+          {!isRoot && (
+            <Stack
+              direction="row"
+              py={2}
+              spacing={2}
+              align="center"
+              zIndex={99}
+              px={2}
+              flexWrap="wrap"
+              justify="flex-end">
+              {!component.componentName && (
+                <ActionButton
+                  label="Name component"
+                  icon={<Edit2 size={16} />}
+                  onClick={() => null}
+                />
+              )}
               <ActionButton
-                label="Name component"
-                icon={<Edit2 size={16} />}
+                label="Duplicate"
+                onClick={() => null}
+                icon={<Copy size={16} />}
+              />
+              <ActionButton
+                label="Reset props"
+                icon={<RefreshCcw size={16} />}
                 onClick={() => null}
               />
-            )}
-            <ActionButton
-              label="Duplicate"
-              onClick={() => null}
-              icon={<Copy size={16} />}
-            />
-            <ActionButton
-              label="Reset props"
-              icon={<RefreshCcw size={16} />}
-              onClick={() => null}
-            />
-            <ActionButton
-              label="Chakra UI Doc"
-              as={Link}
-              onClick={() => {
-                window.open(
-                  `https://chakra-ui.com/${docType.toLowerCase()}`,
-                  "_blank"
-                );
-              }}
-              icon={<Copy size={16} />}
-            />
-            <ActionButton
-              bg="red.500"
-              label="Remove"
-              onClick={() => deleteItem(selectedId)}
-              icon={<Delete size={16} />}
-            />
-          </Stack>
-        )}
-      </Box>
+              <ActionButton
+                label="Chakra UI Doc"
+                as={Link}
+                onClick={() => {
+                  window.open(
+                    `https://chakra-ui.com/${docType.toLowerCase()}`,
+                    "_blank"
+                  );
+                }}
+                icon={<Copy size={16} />}
+              />
+              <ActionButton
+                bg="red.500"
+                label="Remove"
+                onClick={() => deleteItem(selectedId)}
+                icon={<Delete size={16} />}
+              />
+            </Stack>
+          )}
+        </Box>
 
-      <Box pb={1} bg="white" px={3}>
-        <Panels component={component} isRoot={isRoot} />
+        <Box pb={1} bg="white" px={3}>
+          <Panels component={component} isRoot={isRoot} />
+        </Box>
+        <StylesPanel
+          isRoot={isRoot}
+          showChildren={componentHasChildren}
+          parentIsRoot={parentIsRoot}
+        />
       </Box>
-      <StylesPanel
-        isRoot={isRoot}
-        showChildren={componentHasChildren}
-        parentIsRoot={parentIsRoot}
-      />
-    </Box>
     </EditorContext>
   );
 };

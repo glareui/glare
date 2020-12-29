@@ -32,7 +32,9 @@
       "@glare/tree": ["../tree/src"],
       "@glare/tree/*": ["../tree/src/*"],
       "@glare/render": ["../render/src"],
-      "@glare/render/*": ["../render/src/*"]
+      "@glare/render/*": ["../render/src/*"],
+      "@glare/utils": ["../utils/src"],
+      "@glare/utils/*": ["../utils/src/*"]
     }
   }
 }

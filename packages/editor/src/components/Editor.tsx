@@ -16,13 +16,13 @@ export const gridStyles = {
   p: 10,
 };
 
-export const Editor: React.FC = React.memo(() => {
+export const Editor: React.FC = React.memo(({ acceptCustom }) => {
   const showCode = useApp((state) => state.showCode);
   const showLayout = useApp((state) => state.showLayout);
   const components = useTree((state) => state.components);
   const [unselect] = useTree((state) => [state.unselect]);
 
-  const { drop } = useDropComponent("root");
+  const { drop } = useDropComponent("root", acceptCustom);
   const isEmpty = !components.root.children.length;
   const rootProps = components.root.props;
 
