@@ -1,7 +1,8 @@
 import { useInspectorUpdate } from "./../contexts/InspectorContext";
 import { useEffect } from "react";
 
-import { useTree, getDefaultFormProps } from "@glare/tree";
+import { getDefaultFormProps } from "@glare/utils";
+import { useTree } from "@glare/tree";
 
 const usePropsSelector = (propsName: string) => {
   const { addActiveProps } = useInspectorUpdate();

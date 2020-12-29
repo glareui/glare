@@ -5,7 +5,7 @@ import { useTree } from "@glare/tree";
 const ParentInspector = () => {
   const selectedId = useTree((state) => state.selectedId);
   const parentComponent = useTree(
-    (state) => state.components[selectedId].parent
+    (state) => state.components[state.components[selectedId].parent]
   );
 
   const [select, hover, unhover] = useTree((state) => [
