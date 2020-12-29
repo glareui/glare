@@ -5,6 +5,7 @@ import { useTree, builders, shallow } from "@glare/tree";
 
 export const useDropComponent = (
   componentId: string,
+  acceptCustom: (ComponentType | MetaComponentType)[] = [],
   accept: (ComponentType | MetaComponentType)[] = rootComponents,
   canDrop = true
 ) => {
@@ -14,7 +15,7 @@ export const useDropComponent = (
   );
 
   const [{ isOver }, drop] = useDrop({
-    accept,
+    accept: accept.concat(acceptCustom),
     collect: (monitor) => ({
       isOver: monitor.isOver({ shallow: true }) && monitor.canDrop(),
     }),
