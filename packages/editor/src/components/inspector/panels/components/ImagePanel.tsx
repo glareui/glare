@@ -1,4 +1,3 @@
-import React from 'react'
 import { Input } from '@chakra-ui/react'
 import FormControl from './../../controls/FormControl'
 import { useForm } from './../../../../hooks/useForm'

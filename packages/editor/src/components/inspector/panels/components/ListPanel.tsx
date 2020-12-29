@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import { memo } from 'react';
 import FormControl from './../../controls/FormControl'
 import { Select } from '@chakra-ui/react'
 import { useForm } from './../../../../hooks/useForm'

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Box, InputLeftAddon } from "@chakra-ui/react";
 import { useInteractive } from "./../hooks/useInteractive";
 

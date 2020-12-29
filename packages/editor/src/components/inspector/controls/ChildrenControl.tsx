@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, KeyboardEvent } from "react";
+import { useRef, useEffect, KeyboardEvent } from "react";
+import * as React from "react";
 import { Input } from "@chakra-ui/react";
 
 import { useForm } from "./../../../hooks/useForm";

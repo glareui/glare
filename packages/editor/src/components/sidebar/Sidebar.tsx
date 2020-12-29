@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import { memo, useState, ChangeEvent } from "react";
 import {
   Box,
   Input,
@@ -12,7 +12,7 @@ import { menuItems, MenuItem } from "./../componentsList";
 
 import { EditorContext } from "@glare/theme";
 
-export const Sidebar = React.memo(() => {
+export const Sidebar = memo(() => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (

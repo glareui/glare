@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import { memo } from 'react';
 import ColorsControl from './../../controls/ColorsControl'
 import VariantsControl from './../../controls/VariantsControl'
 import SizeControl from './../../controls/SizeControl'

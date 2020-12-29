@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { useDrag } from "react-dnd";
 import { Text, Box } from "@chakra-ui/react";
 import { DragHandleIcon } from "@chakra-ui/icons";

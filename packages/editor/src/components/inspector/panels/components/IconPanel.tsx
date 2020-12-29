@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import { memo } from 'react';
 import ColorsControl from './../../controls/ColorsControl'
 import InputSuggestion from './../../inputs/InputSuggestion'
 import theme from '@chakra-ui/theme'

@@ -1,16 +1,17 @@
-import React from 'react'
-import SwitchControl from './../../controls/SwitchControl'
-import TextControl from './../../controls/TextControl'
-import FormControl from './../../controls/FormControl'
-import { Select } from '@chakra-ui/react'
-import usePropsSelector from './../../../../hooks/usePropsSelector'
-import { useForm } from './../../../../hooks/useForm'
+import SwitchControl from "./../../controls/SwitchControl";
+import TextControl from "./../../controls/TextControl";
+import FormControl from "./../../controls/FormControl";
+
+import { Select } from "@chakra-ui/react";
+
+import usePropsSelector from "./../../../../hooks/usePropsSelector";
+import { useForm } from "./../../../../hooks/useForm";
 
 const StackPanel = () => {
-  const { setValueFromEvent } = useForm()
+  const { setValueFromEvent } = useForm();
 
-  const alignItems = usePropsSelector('alignItems')
-  const justifyContent = usePropsSelector('justifyContent')
+  const alignItems = usePropsSelector("alignItems");
+  const justifyContent = usePropsSelector("justifyContent");
 
   return (
     <>
@@ -21,9 +22,8 @@ const StackPanel = () => {
         <Select
           name="justifyContent"
           size="sm"
-          value={justifyContent || ''}
-          onChange={setValueFromEvent}
-        >
+          value={justifyContent || ""}
+          onChange={setValueFromEvent}>
           <option>flex-start</option>
           <option>center</option>
           <option>flex-end</option>
@@ -35,9 +35,8 @@ const StackPanel = () => {
         <Select
           name="alignItems"
           size="sm"
-          value={alignItems || ''}
-          onChange={setValueFromEvent}
-        >
+          value={alignItems || ""}
+          onChange={setValueFromEvent}>
           <option>stretch</option>
           <option>flex-start</option>
           <option>center</option>
@@ -45,9 +44,9 @@ const StackPanel = () => {
           <option>space-between</option>
           <option>space-around</option>
         </Select>
-      </FormControl>{' '}
+      </FormControl>
     </>
-  )
-}
+  );
+};
 
-export default StackPanel
+export default StackPanel;

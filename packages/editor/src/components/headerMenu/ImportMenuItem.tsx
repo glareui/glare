@@ -1,4 +1,3 @@
-import React from "react";
 import { MenuItem, Box } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 // import { loadFromJSON } from "~utils/import"; # FIXME @glare/storage

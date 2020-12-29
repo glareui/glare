@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { useState, memo, ReactNode } from "react";
 import {
   Popover,
   PopoverTrigger,
@@ -38,7 +38,7 @@ type ColorControlPropsType = {
 
 const ColorsControl = (props: ColorControlPropsType) => {
   const { setValue, setValueFromEvent } = useForm();
-  const [hue, setHue] = React.useState(500);
+  const [hue, setHue] = useState(500);
   const value = usePropsSelector(props.name);
   const theme = useTheme();
 
@@ -161,4 +161,4 @@ const ColorsControl = (props: ColorControlPropsType) => {
   );
 };
 
-export default React.memo(ColorsControl);
+export default memo(ColorsControl);

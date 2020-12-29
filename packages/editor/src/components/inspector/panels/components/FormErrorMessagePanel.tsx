@@ -1,4 +1,3 @@
-import React from 'react'
 import ChildrenControl from './../../controls/ChildrenControl'
 
 const FormErrorMessagePanel = () => {

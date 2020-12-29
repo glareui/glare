@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, Box } from "@chakra-ui/react";
 
 import { DndProvider } from "react-dnd";

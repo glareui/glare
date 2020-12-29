@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import { memo } from 'react';
 import usePropsSelector from './../../../../hooks/usePropsSelector'
 import SizeControl from './../../controls/SizeControl'
 import ColorsControl from './../../controls/ColorsControl'

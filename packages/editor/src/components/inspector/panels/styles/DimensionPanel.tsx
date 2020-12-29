@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { SimpleGrid, Select } from "@chakra-ui/react";
 
 import FormControl from "./../../controls/FormControl";

@@ -1,4 +1,6 @@
-import React, { FunctionComponent, ComponentClass } from "react";
+import * as React from "react";
+
+import { FunctionComponent, ComponentClass } from "react";
 import { useInteractive } from "./hooks/useInteractive";
 import { useDropComponent } from "./hooks/useDropComponent";
 import ComponentPreview from "./ComponentPreview";

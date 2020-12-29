@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import {
   Box,
   Switch,
@@ -31,7 +31,7 @@ import { useApp } from "./../store/app"; // FIXME
 
 import { EditorContext } from "@glare/theme";
 
-export const Header = React.memo(() => {
+export const Header = memo(() => {
   const showCode = useApp((state) => state.showCode);
   const showLayout = useApp((state) => state.showLayout);
 

@@ -1,5 +1,5 @@
-import theme from "./theme";
+// import theme from "./theme";
 import editorTheme from "./editor";
 import EditorContext from "./EditorContext";
 
-export { EditorContext, theme, editorTheme };
+export { EditorContext, editorTheme };

@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react';
+import * as React from 'react';
 // import * as Chakra from '@chakra-ui/react'
 import { useTheme } from '@chakra-ui/react'
 import FormControl from './FormControl'

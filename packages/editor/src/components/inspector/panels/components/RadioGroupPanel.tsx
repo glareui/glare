@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import { memo } from 'react';
 import usePropsSelector from './../../../../hooks/usePropsSelector'
 import SwitchControl from './../../controls/SwitchControl'
 import { Input } from '@chakra-ui/react'
