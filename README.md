@@ -7,6 +7,8 @@ Visual Editor Framework
 
 ![Preview](docs/images/screen.png)
 
+### Why?
+
 ### How to use?
 
 ```
@@ -44,11 +46,17 @@ Clone this repo, run Yarn and start development app
 
     yarn add @glare/core
 
-# Usage
+# Roadmap
+
+- Extend Editor components
+- Inspector for custom components
+- Hook to datasources ex: GraphQL, Rest, Firebase
+- View & layout support
+- Pages
 
 #### Credits
 
-This is forked version of OpenChakra, so big thanks to them!
+This is a forked version of OpenChakra, so big thanks to them!
 
 - [OpenChakra](https://github.com/premieroctet/openchakra/)
 
