@@ -30,8 +30,8 @@ export const App = () => {
           </Box>
           <Box
             maxH="calc(100vh - 3rem)"
-            flex="0 0 15rem"
-            bg="#f7fafc"
+            flex="0 0 18rem"
+            boxShadow="md"
             overflowY="auto"
             overflowX="visible">
             <InspectorProvider>
