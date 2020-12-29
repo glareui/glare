@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react';
+import * as React from 'react';
 import { XYCoord, useDrop, DragObjectWithType, useDrag } from 'react-dnd'
 import ElementListItem from './ElementListItem'
 

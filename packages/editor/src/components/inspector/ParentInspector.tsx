@@ -1,4 +1,3 @@
-import React from "react";
 import ElementListItem from "./elements-list/ElementListItem";
 
 import { useTree } from "@glare/tree";

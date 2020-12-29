@@ -1,4 +1,5 @@
-import React, { ReactNode, memo } from 'react'
+import { ReactNode, memo } from 'react';
+import * as React from 'react';
 import {
   FormLabel,
   FormControl as ChakraFormControl,

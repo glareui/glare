@@ -1,10 +1,5 @@
-import React, {
-  useContext,
-  createContext,
-  useState,
-  useCallback,
-  useMemo,
-} from "react";
+import { useContext, createContext, useState, useCallback, useMemo } from "react";
+import * as React from "react";
 
 type UpdateProps = {
   addActiveProps: (propsName: string) => void;

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Select } from '@chakra-ui/react'
 import { useForm } from './../../../../hooks/useForm'
 import SizeControl from './../../controls/SizeControl'

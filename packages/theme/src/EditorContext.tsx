@@ -1,6 +1,6 @@
-import React from "react";
+import { cloneElement } from "react";
 
 const EditorContext = ({ children }: any) =>
-  React.cloneElement(children, { className: "glare-editor-ui" });
+  cloneElement(children, { className: "glare-editor-ui" });
 
 export default EditorContext;

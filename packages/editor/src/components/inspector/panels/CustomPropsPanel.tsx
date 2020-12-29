@@ -1,4 +1,4 @@
-import React, { memo, useState, FormEvent, ChangeEvent, useRef } from "react";
+import { memo, useState, FormEvent, ChangeEvent, useRef } from "react";
 
 import {
   IconButton,

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Stack, Box } from "@chakra-ui/react";
 import { useInteractive } from "./../hooks/useInteractive";
 import { useDropComponent } from "./../hooks/useDropComponent";

@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import { memo } from 'react';
 import { Select } from '@chakra-ui/react'
 
 import ColorsControl from './../../controls/ColorsControl'

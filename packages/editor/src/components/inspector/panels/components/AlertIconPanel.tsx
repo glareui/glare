@@ -1,4 +1,3 @@
-import React from 'react'
 import TextControl from './../../controls/TextControl'
 
 const AlertIconPanel = () => {

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react';
 import { Select } from '@chakra-ui/react'
 import FormControl from './FormControl'
 import { useForm } from './../../../hooks/useForm'

@@ -1,4 +1,5 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
+import * as React from "react";
 import { Text, Flex, BoxProps, Box } from "@chakra-ui/react";
 import { SettingsIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
 import ActionButton from "./../ActionButton";

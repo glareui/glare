@@ -1,4 +1,3 @@
-import React from 'react'
 import NumberControl from './../../controls/NumberControl'
 
 const AspectRatioPanel = () => {

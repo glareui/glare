@@ -1,4 +1,5 @@
-import React, { ReactNode, useCallback } from 'react'
+import { ReactNode, useCallback } from 'react';
+import * as React from 'react';
 import { NumberInput, NumberInputProps } from '@chakra-ui/react'
 import FormControl from './FormControl'
 import { useForm } from './../../../hooks/useForm'

@@ -1,4 +1,3 @@
-import React from "react";
 import * as Chakra from "@chakra-ui/react";
 
 import omit from "lodash/omit";
